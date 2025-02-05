@@ -40,20 +40,20 @@ const Home = () => {
 
   return (
     <Loader loading={isLoading || isUsersLoading}>
-      <div className="flex flex-col w-full py-5 px-4 gap-8">
+      <div className="flex flex-col w-full p-2 gap-2">
         {/* User Summary */}
-        <div className="flex w-full gap-5">
+        <div className="flex w-full gap-2">
           <Card className="lg:w-1/3">
             <CardHeader>
               <CardTitle>User Summary</CardTitle>
             </CardHeader>
-            <CardContent className="flex justify-between py-4 px-10">
+            <CardContent className="flex justify-between py-2 px-4">
               <div>
-                <h2 className="text-4xl font-bold">{totalAdmins}</h2>
+                <h2 className="text-2xl font-bold">{totalAdmins}</h2>
                 <p className="text-lg text-primary/65">Total Admins</p>
               </div>
               <div>
-                <h2 className="text-4xl font-bold">{totalEmployees}</h2>
+                <h2 className="text-2xl font-bold">{totalEmployees}</h2>
                 <p className="text-lg text-primary/65">Total Employees</p>
               </div>
             </CardContent>
@@ -63,21 +63,21 @@ const Home = () => {
             <CardHeader>
               <CardTitle>Requests Summary</CardTitle>
             </CardHeader>
-            <CardContent className="flex justify-between py-4 px-10">
+            <CardContent className="flex justify-between py-2 px-4">
               <div>
-                <h2 className="text-4xl font-bold">{totalRequests}</h2>
+                <h2 className="text-2xl font-bold">{totalRequests}</h2>
                 <p className="text-lg text-primary/65">Total Requests</p>
               </div>
               <div>
-                <h2 className="text-4xl font-bold">{pendingRequests}</h2>
+                <h2 className="text-2xl font-bold">{pendingRequests}</h2>
                 <p className="text-lg text-yellow-500">Pending</p>
               </div>
               <div>
-                <h2 className="text-4xl font-bold">{approvedRequests}</h2>
+                <h2 className="text-2xl font-bold">{approvedRequests}</h2>
                 <p className="text-lg text-green-500">Approved</p>
               </div>
               <div>
-                <h2 className="text-4xl font-bold">{rejectedRequests}</h2>
+                <h2 className="text-2xl font-bold">{rejectedRequests}</h2>
                 <p className="text-lg text-red-500">Rejected</p>
               </div>
             </CardContent>
@@ -85,18 +85,18 @@ const Home = () => {
         </div>
 
         {/* Pie Charts */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-2">
           <Card>
             <CardHeader>
               <CardTitle>User Distribution</CardTitle>
             </CardHeader>
             <CardContent className="flex justify-center">
-              <PieChart width={300} height={300}>
+              <PieChart width={250} height={250}>
                 <Pie
                   data={userPieData}
                   dataKey="value"
-                  outerRadius={140}
-                  innerRadius={80}
+                  outerRadius={100}
+                  innerRadius={75}
                 >
                   {userPieData.map((entry, index) => (
                     <Cell
@@ -120,12 +120,12 @@ const Home = () => {
               <CardTitle>Requests Status</CardTitle>
             </CardHeader>
             <CardContent className="flex justify-center">
-              <PieChart width={300} height={300}>
+              <PieChart width={250} height={250}>
                 <Pie
                   data={requestPieData}
                   dataKey="value"
-                  outerRadius={140}
-                  innerRadius={80}
+                  outerRadius={100}
+                  innerRadius={75}
                 >
                   {requestPieData.map((entry, index) => (
                     <Cell
