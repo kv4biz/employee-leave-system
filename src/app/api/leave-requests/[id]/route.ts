@@ -5,13 +5,13 @@ import { sendEmail } from "@/lib/emailSender";
 
 export async function GET(
   req: NextRequest,
-  context: { params: { id: string } }
+  { params }: { params: { id: string } }
 ) {
   const response = await validateToken(req);
   if (response.status !== 200) return response;
 
   const user = (req as any).user;
-  const { id } = await context.params;
+  const { id } = params;
 
   try {
     const leaveRequest = await prisma.leaveRequest.findUnique({
@@ -42,7 +42,7 @@ export async function GET(
 
 export async function PATCH(
   req: NextRequest,
-  context: { params: { id: string } }
+  { params }: { params: { id: string } }
 ) {
   const response = await validateToken(req);
   if (response.status !== 200) return response;
@@ -54,7 +54,7 @@ export async function PATCH(
     );
   }
 
-  const { id } = await context.params;
+  const { id } = params;
 
   try {
     const { status } = await req.json();
