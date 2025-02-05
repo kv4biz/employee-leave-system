@@ -50,11 +50,11 @@ const Home = () => {
             <CardContent className="flex justify-between py-4 px-10">
               <div>
                 <h2 className="text-4xl font-bold">{totalAdmins}</h2>
-                <p className="text-xl text-primary/65">Total Admins</p>
+                <p className="text-lg text-primary/65">Total Admins</p>
               </div>
               <div>
                 <h2 className="text-4xl font-bold">{totalEmployees}</h2>
-                <p className="text-xl text-primary/65">Total Employees</p>
+                <p className="text-lg text-primary/65">Total Employees</p>
               </div>
             </CardContent>
           </Card>
@@ -66,19 +66,19 @@ const Home = () => {
             <CardContent className="flex justify-between py-4 px-10">
               <div>
                 <h2 className="text-4xl font-bold">{totalRequests}</h2>
-                <p className="text-xl text-primary/65">Total Requests</p>
+                <p className="text-lg text-primary/65">Total Requests</p>
               </div>
               <div>
                 <h2 className="text-4xl font-bold">{pendingRequests}</h2>
-                <p className="text-xl text-yellow-500">Pending</p>
+                <p className="text-lg text-yellow-500">Pending</p>
               </div>
               <div>
                 <h2 className="text-4xl font-bold">{approvedRequests}</h2>
-                <p className="text-xl text-green-500">Approved</p>
+                <p className="text-lg text-green-500">Approved</p>
               </div>
               <div>
                 <h2 className="text-4xl font-bold">{rejectedRequests}</h2>
-                <p className="text-xl text-red-500">Rejected</p>
+                <p className="text-lg text-red-500">Rejected</p>
               </div>
             </CardContent>
           </Card>
@@ -91,12 +91,12 @@ const Home = () => {
               <CardTitle>User Distribution</CardTitle>
             </CardHeader>
             <CardContent className="flex justify-center">
-              <PieChart width={320} height={320}>
+              <PieChart width={300} height={300}>
                 <Pie
                   data={userPieData}
                   dataKey="value"
-                  outerRadius={158}
-                  innerRadius={100}
+                  outerRadius={140}
+                  innerRadius={80}
                 >
                   {userPieData.map((entry, index) => (
                     <Cell
@@ -107,7 +107,7 @@ const Home = () => {
                   <Label
                     value={`${users.length} Users`}
                     position="center"
-                    className="text-xl font-bold"
+                    className="text-lg font-bold"
                   />
                 </Pie>
                 <Tooltip />
@@ -120,12 +120,12 @@ const Home = () => {
               <CardTitle>Requests Status</CardTitle>
             </CardHeader>
             <CardContent className="flex justify-center">
-              <PieChart width={320} height={320}>
+              <PieChart width={300} height={300}>
                 <Pie
                   data={requestPieData}
                   dataKey="value"
-                  outerRadius={158}
-                  innerRadius={100}
+                  outerRadius={140}
+                  innerRadius={80}
                 >
                   {requestPieData.map((entry, index) => (
                     <Cell
@@ -136,7 +136,7 @@ const Home = () => {
                   <Label
                     value={`${totalRequests} Requests`}
                     position="center"
-                    className="text-xl font-bold"
+                    className="text-lg font-bold"
                   />
                 </Pie>
                 <Tooltip />
