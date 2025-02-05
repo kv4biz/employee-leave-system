@@ -6,8 +6,7 @@ export async function DELETE(
   context: { params: { id: string } }
 ) {
   try {
-    // ✅ Wait for params to resolve
-    const { id } = await context.params;
+    const { id } = context.params;
 
     const folder = req.nextUrl.searchParams.get("folder");
 
@@ -17,17 +16,13 @@ export async function DELETE(
         { status: 400 }
       );
     }
-
-    // Delete image from Cloudinary
     const isDeleted = await deleteImage(id, folder);
-
     if (!isDeleted) {
       return NextResponse.json(
         { error: "Failed to delete the image" },
         { status: 500 }
       );
     }
-
     return NextResponse.json(
       { message: "Image deleted successfully" },
       { status: 200 }

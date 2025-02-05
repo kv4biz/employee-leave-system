@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   title: "ELS (Employee Leave System)",
   description: "Manage employee leave efficiently with ELS.",
   icons: {
-    icon: "/shield.svg",
+    icon: "/Shield.svg",
   },
 };
 
