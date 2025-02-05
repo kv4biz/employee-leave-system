@@ -91,8 +91,13 @@ const Home = () => {
               <CardTitle>User Distribution</CardTitle>
             </CardHeader>
             <CardContent className="flex justify-center">
-              <PieChart width={300} height={300}>
-                <Pie data={userPieData} dataKey="value" outerRadius={100}>
+              <PieChart width={320} height={320}>
+                <Pie
+                  data={userPieData}
+                  dataKey="value"
+                  outerRadius={158}
+                  innerRadius={100}
+                >
                   {userPieData.map((entry, index) => (
                     <Cell
                       key={`cell-${index}`}
@@ -100,7 +105,7 @@ const Home = () => {
                     />
                   ))}
                   <Label
-                    value={users.length}
+                    value={`${users.length} Users`}
                     position="center"
                     className="text-xl font-bold"
                   />
@@ -115,8 +120,13 @@ const Home = () => {
               <CardTitle>Requests Status</CardTitle>
             </CardHeader>
             <CardContent className="flex justify-center">
-              <PieChart width={300} height={300}>
-                <Pie data={requestPieData} dataKey="value" outerRadius={100}>
+              <PieChart width={320} height={320}>
+                <Pie
+                  data={requestPieData}
+                  dataKey="value"
+                  outerRadius={158}
+                  innerRadius={100}
+                >
                   {requestPieData.map((entry, index) => (
                     <Cell
                       key={`cell-${index}`}
@@ -124,7 +134,7 @@ const Home = () => {
                     />
                   ))}
                   <Label
-                    value={totalRequests}
+                    value={`${totalRequests} Requests`}
                     position="center"
                     className="text-xl font-bold"
                   />
