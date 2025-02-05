@@ -2,7 +2,6 @@
 import React, { useEffect, useState } from "react";
 import { useUserActions } from "@/hooks/user/action-user";
 import { Loader } from "@/components/loader";
-import Image from "next/image";
 
 const ViewUser = ({ userId }: { userId: string }) => {
   const { fetchUser } = useUserActions();
@@ -32,7 +31,7 @@ const ViewUser = ({ userId }: { userId: string }) => {
         <div className="flex flex-col gap-4">
           <p>
             <strong>Profile Pic:</strong>
-            <Image
+            <img
               src={user.profilePic}
               height={300}
               width={300}

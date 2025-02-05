@@ -5,7 +5,6 @@ import { Trash, UploadCloud } from "lucide-react";
 import React, { useRef, useState } from "react";
 import axios from "axios";
 import { Loader } from "@/components/loader";
-import Image from "next/image";
 
 type ImageUploaderProps = {
   name: string;
@@ -96,9 +95,11 @@ const ImageUploader = ({ name, onChange }: ImageUploaderProps) => {
       <Loader loading={loading}>
         {imageUrl && (
           <div className="flex relative justify-center">
-            <Image
+            <img
               src={imageUrl}
               alt="Uploaded"
+              width={500}
+              height={500}
               className="w-full object-cover rounded-md"
             />
             <button

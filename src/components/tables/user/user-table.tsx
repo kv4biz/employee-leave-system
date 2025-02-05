@@ -15,7 +15,6 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import UserActionOverlay from "@/components/actions/user/user-action-overlay";
-import Image from "next/image";
 
 interface User {
   id: string;
@@ -81,7 +80,7 @@ const UserTable = () => {
       accessorKey: "profilePic",
       header: "Profile Picture",
       cell: ({ row }) => (
-        <Image
+        <img
           src={row.original.profilePic}
           alt="Profile Pic"
           width={40}

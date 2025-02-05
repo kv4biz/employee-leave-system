@@ -100,7 +100,7 @@ const FormGenerator = ({
             }}
           />
         ) : type === "image" ? (
-          <ImageUploader
+          <imgUploader
             name={name}
             onChange={(imageUrl) => {
               register(name).onChange({ target: { name, value: imageUrl } }); // ✅ Properly update form state
