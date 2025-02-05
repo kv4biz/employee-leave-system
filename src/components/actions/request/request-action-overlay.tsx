@@ -27,7 +27,6 @@ const RequestActionOverlay: React.FC<RequestActionOverlayProps> = ({
   refreshTable,
 }) => {
   if (!action || !requestId) return null;
-  console.log("Opening action for leave request ID:", requestId);
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>

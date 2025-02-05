@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { useUserActions } from "@/hooks/user/action-user";
 import { Loader } from "@/components/loader";
+import Image from "next/image";
 
 const ViewUser = ({ userId }: { userId: string }) => {
   const { fetchUser } = useUserActions();
@@ -12,7 +13,6 @@ const ViewUser = ({ userId }: { userId: string }) => {
     const loadUser = async () => {
       try {
         const data = await fetchUser(userId);
-        console.log("Fetched user data:", data);
         setUser(data.user);
       } catch (error) {
         console.error("Error fetching user:", error);
@@ -32,7 +32,7 @@ const ViewUser = ({ userId }: { userId: string }) => {
         <div className="flex flex-col gap-4">
           <p>
             <strong>Profile Pic:</strong>
-            <img
+            <Image
               src={user.profilePic}
               height={300}
               width={300}

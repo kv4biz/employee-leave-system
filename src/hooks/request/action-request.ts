@@ -37,8 +37,6 @@ export const useRequestActions = () => {
           .find((row) => row.startsWith("authToken="))
           ?.split("=")[1];
 
-        console.log("Fetched authToken from cookie:", token);
-
         if (!token) throw new Error("Authentication token missing");
 
         const response = await axios.get("/api/leave-requests", {

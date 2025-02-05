@@ -26,7 +26,6 @@ const UserActionOverlay: React.FC<UserActionOverlayProps> = ({
   refreshTable,
 }) => {
   if (!action || !userId) return null;
-  console.log("Opening action for user ID:", userId);
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>

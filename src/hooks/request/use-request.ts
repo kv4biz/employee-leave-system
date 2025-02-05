@@ -41,8 +41,6 @@ export const useRequest = () => {
         throw new Error("Authentication token is missing. Please log in.");
       }
 
-      console.log("Token being sent:", token);
-
       const requestBody = {
         startDate: data.dateRange.from.toISOString(),
         endDate: data.dateRange.to.toISOString(),

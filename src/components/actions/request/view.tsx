@@ -16,8 +16,6 @@ const ViewRequest = ({ requestId }: { requestId: string }) => {
     const loadRequest = async () => {
       try {
         const data = await fetchLeaveRequest(requestId);
-        console.log("Fetched leave request data:", data);
-        // Set the request directly (not data.request)
         setRequest(data);
       } catch (error) {
         console.error("Error fetching leave request:", error);

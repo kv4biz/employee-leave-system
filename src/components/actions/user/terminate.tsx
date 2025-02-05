@@ -31,7 +31,6 @@ const TerminateUser = ({
   useEffect(() => {
     const loadUser = async () => {
       const data = await fetchUser(userId);
-      console.log("Fetched user data:", data);
       setUser(data.user);
       setLoading(false);
     };

@@ -3,6 +3,7 @@
 import React from "react";
 import { useUser } from "@/hooks/use-user";
 import { Loader } from "../loader";
+import Image from "next/image";
 
 const IdCard = () => {
   const { user } = useUser();
@@ -20,7 +21,7 @@ const IdCard = () => {
       <div className="flex flex-col py-5 px-2 lg:px-5 lg:flex-row items-center justify-center lg:justify-between gap-6 ">
         <div className="flex w-72 h-72 items-center justify-center overflow-hidden rounded-full">
           {user.profilePic ? (
-            <img
+            <Image
               src={user.profilePic}
               alt="Profile Picture"
               className="w-full h-full object-cover"

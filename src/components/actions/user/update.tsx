@@ -38,7 +38,6 @@ const UpdateUser = ({
     const loadUser = async () => {
       setLoading(true);
       const data = await fetchUser(userId);
-      console.log("Fetched user data:", data);
 
       if (data?.user) {
         setUser(data.user);
